@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[ECS]
+
+Component/scripts=[ "res://Components/BounceComponent.gd" ]
+System/scripts=[ "res://Systems/BounceSystem.gd" ]
+
+[application]
+
+config/name="GodexPhysics"
+run/main_scene="res://WorldECS.tscn"
+config/icon="res://icon.png"
+
+[physics]
+
+common/physics_fps=120
+common/physics_jitter_fix=0.0
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

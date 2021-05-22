@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://CenterMaterial.tres" type="Material" id=1]
+[ext_resource path="res://TestMaterial.tres" type="Material" id=2]
+[ext_resource path="res://kloppenheim_02_2k.jpg" type="Texture2D" id=3]
+
+[sub_resource type="PipelineECS" id=1]
+pipeline_name = @"Default"
+systems_name = [ @"VelocitySystem.gd", @"ScenarioManagerSystem", @"MeshUpdaterSystem", @"MeshTransformUpdaterSystem" ]
+
+[sub_resource type="CylinderMesh" id=2]
+material = ExtResource( 1 )
+
+[sub_resource type="CapsuleMesh" id=3]
+material = ExtResource( 2 )
+
+[sub_resource type="SphereMesh" id=4]
+material = ExtResource( 2 )
+
+[sub_resource type="BoxMesh" id=5]
+material = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=6]
+size = Vector2( 50, 50 )
+
+[sub_resource type="PanoramaSkyMaterial" id=7]
+panorama = ExtResource( 3 )
+
+[sub_resource type="Sky" id=8]
+sky_material = SubResource( 7 )
+
+[sub_resource type="Environment" id=9]
+background_mode = 2
+background_energy = 0.02
+sky = SubResource( 8 )
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+auto_exposure_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = true
+glow_enabled = true
+
+[node name="WorldECS" type="WorldECS"]
+active_pipeline = @"Default"
+system_dispatchers_map = {
+}
+storages_config = {
+}
+pipelines/Default = SubResource( 1 )
+script = null
+
+[node name="Entity" type="Entity3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1727, 0 )
+Velocity.gd = true
+Velocity.gd/velocity = Vector3( 0, 1, 0 )
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1727, 0 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 2 )
+script = null
+
+[node name="Entity2" type="Entity3D" parent="Entity"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82985, 0.614967, -0.0256849 )
+Child = true
+Velocity.gd = true
+Velocity.gd/velocity = Vector3( 0, -2, 0 )
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82985, 0.614967, -0.0256849 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 3 )
+script = null
+
+[node name="Entity3" type="Entity3D" parent="Entity/Entity2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91446, 1.95596, 0.17556 )
+Child = true
+Velocity.gd = true
+Velocity.gd/velocity = Vector3( 1, 1, 0 )
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91446, 1.95596, 0.17556 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 4 )
+script = null
+
+[node name="Entity4" type="Entity3D" parent="Entity/Entity2/Entity3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8976, 1.90535, 0 )
+Child = true
+Velocity.gd = true
+Velocity.gd/velocity = Vector3( 0, 0, 10 )
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8976, 1.90535, 0 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 5 )
+script = null
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5326, 3.04576, -6.44574 )
+light_color = Color( 1, 0, 0, 1 )
+shadow_enabled = true
+omni_range = 36.5999
+omni_attenuation = 1.03526
+script = null
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7521, 3.25948, -6.05854 )
+light_color = Color( 0.756863, 1, 0, 1 )
+shadow_enabled = true
+omni_range = 28.8231
+omni_attenuation = 1.03526
+script = null
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.41457, 2.4755, 6.83743 )
+light_color = Color( 0, 0.670588, 1, 1 )
+shadow_enabled = true
+omni_range = 30.9054
+omni_attenuation = 1.03526
+script = null
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87778, 2.4755, 5.90592 )
+light_color = Color( 1, 0, 0.631373, 1 )
+shadow_enabled = true
+omni_range = 30.9054
+omni_attenuation = 1.03526
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform( 0.884744, -0.148344, 0.44184, 0, 0.947996, 0.318281, -0.466078, -0.281597, 0.838734, 6.7421, 3.37096, 6.81936 )
+script = null
+
+[node name="Entity3D" type="Entity3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0129659, 0 )
+TransformComponent = true
+MeshComponent = true
+MeshComponent/mesh = SubResource( 6 )
+script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 9 )
+script = null

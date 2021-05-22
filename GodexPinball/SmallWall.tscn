@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://floor_material.tres" type="Material" id=1]
+
+[sub_resource type="SharedComponentResource" id=1]
+component_name = @"BtBox"
+half_extents = Vector3( 2.08136, 0.250778, 2.0627 )
+margin = 0.04
+
+[sub_resource type="BoxMesh" id=2]
+material = ExtResource( 1 )
+size = Vector3( 4, 0.5, 4 )
+
+[node name="SmallWall" type="Entity3D"]
+Child = true
+TransformComponent = true
+BtRigidBody = true
+BtRigidBody/body_mode = 3
+BtBox = true
+BtBox/resource = SubResource( 1 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 2 )
+script = null

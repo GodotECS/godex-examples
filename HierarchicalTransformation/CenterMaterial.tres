@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=2]
+
+[ext_resource path="res://mask.png" type="Texture2D" id=1]
+
+[resource]
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color( 0.00784314, 1, 0, 1 )
+emission_energy = 5.51
+emission_operator = 1
+emission_on_uv2 = false
+emission_texture = ExtResource( 1 )

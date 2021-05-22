@@ -1,0 +1,174 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://SmallWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bumper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ex4_3c5XAAA_31s.png large.png" type="Texture2D" id=3]
+
+[sub_resource type="SharedComponentResource" id=1]
+component_name = @"BtBox"
+half_extents = Vector3( 4.44047, 0.49316, 6.38555 )
+margin = 0.04
+
+[sub_resource type="StandardMaterial3D" id=5]
+transparency = 1
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="PlaneMesh" id=6]
+material = SubResource( 5 )
+
+[node name="PinballBoard" type="Entity3D"]
+TransformComponent = true
+script = null
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, 0 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, 0 )
+
+[node name="Ground2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, 0 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, 0 )
+
+[node name="Ground3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, -3.95087 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, -3.95087 )
+
+[node name="Ground4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, -3.95087 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, -3.95087 )
+
+[node name="Ground5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, -7.83229 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9847, 0, -7.83229 )
+
+[node name="Ground6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, -7.83229 )
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95968, 0, -7.83229 )
+
+[node name="RightWall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, -7.83229 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, -7.83229 )
+
+[node name="RightWall2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, -3.98163 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, -3.98163 )
+
+[node name="RightWall3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, 0.00134468 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, 4.21562, -0.590754, 0.00134468 )
+
+[node name="LeftWall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, -7.83229 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, -7.83229 )
+
+[node name="LeftWall2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, -3.98163 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, -3.98163 )
+
+[node name="LeftWall3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, 0.00134468 )
+TransformComponent/transform = Transform( 0.018674, 0.999826, 0, -0.999826, 0.018674, 0, 0, 0, 1, -4.18499, -0.590754, 0.00134468 )
+
+[node name="UpperPart" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, -2.46741, -0.590754, -10.0663 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, -2.46741, -0.590754, -10.0663 )
+
+[node name="UpperPar2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 0.211595, -0.590754, -10.0663 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 0.211595, -0.590754, -10.0663 )
+
+[node name="UpperPar3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 2.43494, -0.590754, -10.0663 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 2.43494, -0.590754, -10.0663 )
+
+[node name="UpperPart2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, -2.46741, -0.590754, 2.1819 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, -2.46741, -0.590754, 2.1819 )
+
+[node name="UpperPar4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 0.211595, -0.590754, 2.1819 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 0.211595, -0.590754, 2.1819 )
+
+[node name="UpperPar5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 2.43494, -0.590754, 2.1819 )
+TransformComponent/transform = Transform( 0.000100383, 0.00537463, 0.999986, -0.999826, 0.018674, 0, -0.0186737, -0.999811, 0.00537557, 2.43494, -0.590754, 2.1819 )
+
+[node name="Glass" type="Entity3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88123, -3.90186 )
+Child = true
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88123, -3.90186 )
+BtRigidBody = true
+BtRigidBody/body_mode = 3
+BtBox = true
+BtBox/resource = SubResource( 1 )
+script = null
+
+[node name="Bumpers" type="Entity3D" parent="."]
+Child = true
+TransformComponent = true
+script = null
+
+[node name="Bumper" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.684164, -0.729327, 0, 0, 0, 1, -0.729327, 0.684164, 0, -3.99401, 0.880419, 1.92752 )
+TransformComponent/transform = Transform( -0.684164, -0.729327, 0, 0, 0, 1, -0.729327, 0.684164, 0, -3.99401, 0.880419, 1.92752 )
+
+[node name="Bumper2" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.675075, 0.737748, 0, 0, 0, 1, 0.737748, 0.675075, 0, 3.95374, 0.901837, 1.95395 )
+TransformComponent/transform = Transform( -0.675075, 0.737748, 0, 0, 0, 1, 0.737748, 0.675075, 0, 3.95374, 0.901837, 1.95395 )
+
+[node name="Bumper3" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.99583, -0.0912239, 0, 0, 0, 1, -0.0912239, 0.99583, 0, 1.64138, 0.901837, 2.40671 )
+TransformComponent/transform = Transform( -0.99583, -0.0912239, 0, 0, 0, 1, -0.0912239, 0.99583, 0, 1.64138, 0.901837, 2.40671 )
+
+[node name="Bumper8" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.999574, -0.0291608, 0, 0, 0, 1, -0.0291608, 0.999574, 0, 2.64393, 0.901837, 2.41706 )
+TransformComponent/transform = Transform( -0.999574, -0.0291608, 0, 0, 0, 1, -0.0291608, 0.999574, 0, 2.64393, 0.901837, 2.41706 )
+
+[node name="Bumper4" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.999686, 0.0250598, 0, 0, 0, 1, 0.0250598, 0.999686, 0, -1.61616, 0.901837, 2.37596 )
+TransformComponent/transform = Transform( -0.999686, 0.0250598, 0, 0, 0, 1, 0.0250598, 0.999686, 0, -1.61616, 0.901837, 2.37596 )
+
+[node name="Bumper7" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.999059, -0.0433583, 0, 0, 0, 1, -0.0433583, 0.999059, 0, -2.72079, 0.901837, 2.41687 )
+TransformComponent/transform = Transform( -0.999059, -0.0433583, 0, 0, 0, 1, -0.0433583, 0.999059, 0, -2.72079, 0.901837, 2.41687 )
+
+[node name="Bumper5" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.999987, -0.0049048, 0, 0, 0, 1, -0.0049048, 0.999987, 0, -0.546118, 0.901837, 2.407 )
+TransformComponent/transform = Transform( -0.999987, -0.0049048, 0, 0, 0, 1, -0.0049048, 0.999987, 0, -0.546118, 0.901837, 2.407 )
+
+[node name="Bumper6" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.999987, -0.0049048, 0, 0, 0, 1, -0.0049048, 0.999987, 0, 0.624648, 0.901837, 2.37596 )
+TransformComponent/transform = Transform( -0.999987, -0.0049048, 0, 0, 0, 1, -0.0049048, 0.999987, 0, 0.624648, 0.901837, 2.37596 )
+
+[node name="Bumper9" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.773818, 0.633407, 0, 0, 0, 1, 0.633407, 0.773818, 0, -1.36061, 0.901837, -4.73942 )
+TransformComponent/transform = Transform( -0.773818, 0.633407, 0, 0, 0, 1, 0.633407, 0.773818, 0, -1.36061, 0.901837, -4.73942 )
+
+[node name="Bumper13" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.773818, 0.633407, 0, 0, 0, 1, 0.633407, 0.773818, 0, 4.11298, 0.901836, -2.56526 )
+TransformComponent/transform = Transform( -0.773818, 0.633407, 0, 0, 0, 1, 0.633407, 0.773818, 0, 4.11298, 0.901836, -2.56526 )
+
+[node name="Bumper10" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.912798, -0.40841, 0, 0, 0, 1, -0.40841, 0.912798, 0, 1.62459, 0.901837, -4.73942 )
+TransformComponent/transform = Transform( -0.912798, -0.40841, 0, 0, 0, 1, -0.40841, 0.912798, 0, 1.62459, 0.901837, -4.73942 )
+
+[node name="Bumper14" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( -0.732887, -0.68035, 0, 0, 0, 1, -0.68035, 0.732887, 0, -3.99476, 0.901837, -3.05656 )
+TransformComponent/transform = Transform( -0.732887, -0.68035, 0, 0, 0, 1, -0.68035, 0.732887, 0, -3.99476, 0.901837, -3.05656 )
+
+[node name="Bumper11" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( 0.999297, -0.0374804, 0, 0, 0, 1, -0.0374804, -0.999297, 0, 3.44666, 0.901837, -9.95588 )
+TransformComponent/transform = Transform( 0.999297, -0.0374804, 0, 0, 0, 1, -0.0374804, -0.999297, 0, 3.44666, 0.901837, -9.95588 )
+
+[node name="Bumper12" parent="Bumpers" instance=ExtResource( 2 )]
+transform = Transform( 0.999297, -0.0374804, 0, 0, 0, 1, -0.0374804, -0.999297, 0, -3.42661, 0.901837, -9.95588 )
+TransformComponent/transform = Transform( 0.999297, -0.0374804, 0, 0, 0, 1, -0.0374804, -0.999297, 0, -3.42661, 0.901837, -9.95588 )
+
+[node name="Godexxe" type="Entity3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250948, -5.70237 )
+Child = true
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250948, -5.70237 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 6 )
+script = null

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BoncingPointMaterial.tres" type="Material" id=1]
+
+[sub_resource type="SharedComponentResource" id=10]
+component_name = @"BtShapeBox"
+component_data = {
+@"half_extents": Vector3( 0.297133, 0.106509, 0.284439 ),
+@"margin": 0.04
+}
+half_extents = Vector3( 0.297133, 0.106509, 0.284439 )
+margin = 0.04
+
+[sub_resource type="CylinderMesh" id=11]
+material = ExtResource( 1 )
+top_radius = 0.2
+bottom_radius = 0.4
+height = 0.1
+
+[node name="Area" type="Entity3D"]
+__component_data = {
+@"BtArea": {
+@"event_component": @"BounceComponent.gd",
+@"event_mode": 3,
+@"event_component_data": {
+"overlap_with": "@entity_id"
+},
+@"overlap_add_component": @"BounceComponent.gd",
+@"overlap_data": {
+"overlap_area_transform": "@transform",
+"overlap_with": "@entity_id"
+},
+@"overlap_event_mode": 3
+},
+@"TransformComponent": {
+@"transform": Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+},
+@"BtShapeBox": SubResource( 10 ),
+@"MeshComponent": {
+@"mesh": SubResource( 11 )
+}
+}
+script = null

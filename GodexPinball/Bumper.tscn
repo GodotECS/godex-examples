@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://BoncingPointMaterial.tres" type="Material" id=1]
+
+[sub_resource type="SharedComponentResource" id=1]
+component_name = @"BtBox"
+half_extents = Vector3( 0.496285, 0.503349, 0.500039 )
+margin = 0.04
+
+[sub_resource type="PrismMesh" id=2]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SharedComponentResource" id=4]
+component_name = @"BtSphere"
+radius = 0.4
+
+[sub_resource type="SphereMesh" id=3]
+material = ExtResource( 1 )
+radius = 0.4
+height = 0.8
+
+[node name="Bumper" type="Entity3D"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+Child = true
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+BtRigidBody = true
+BtRigidBody/body_mode = 3
+BtBox = true
+BtBox/resource = SubResource( 1 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 2 )
+script = null
+
+[node name="Area" type="Entity3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.494931, 0 )
+BtSphere = true
+BtSphere/resource = SubResource( 4 )
+Child = true
+TransformComponent = true
+TransformComponent/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.494931, 0 )
+MeshComponent = true
+MeshComponent/mesh = SubResource( 3 )
+BtArea = true
+BtArea/overlap_add_component = @"BounceComponent.gd"
+BtArea/overlap_data = {
+"overlap_area_transform": "@transform",
+"overlap_with": "@entity_id"
+}
+BtArea/overlap_event_mode = 3
+script = null
